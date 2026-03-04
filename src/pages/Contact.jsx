@@ -18,7 +18,7 @@ export default function Contact() {
 
       <h3 className="contact-subtitle">Réseaux</h3>
       <ul className="contact-socials">
-        <li>🔗 Gitlab : <a href="https://gitlab.com/evan-zougs" target="_blank">gitlab.com/evan-zougs</a></li>
+        <li>🔗 GitHub : <a href="https://github.com/ZOUGS-Evan" target="_blank">github.com/ZOUGS-Evan</a></li>
         <li>💼 LinkedIn : <a href="https://linkedin.com/in/evan-zougs" target="_blank">linkedin.com/in/evan-zougs</a></li>
       </ul>
     </div>

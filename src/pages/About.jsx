@@ -16,7 +16,7 @@ export default function About() {
       </div>
 
       {/* FRAMEWORKS */}
-      <h3 className="subtitle">Framworks</h3>
+      <h3 className="subtitle">Frameworks</h3>
       <ul className="skills-list">
         <li>Laravel</li>
         <li>React</li>
@@ -34,14 +34,14 @@ export default function About() {
       {/* DATABASE SERVICES */}
       <h3 className="subtitle">Serveurs de Base de Données</h3>
       <ul className="skills-list">
-        <li>SQL Server Management Studio (SSMS)</li>
-        <li>DataGrip</li>
+        <li>SQL Server</li>
+        <li>MariaDB</li>
       </ul>
 
       {/* TOOLS */}
-      <h3 className="subtitle">Outils Utilisés</h3>
+      <h3 className="subtitle">Outils et environnement</h3>
       <ul className="skills-list">
-        <li>GitLab</li>
+        <li>GitLab et GitHub</li>
         <li>VS Code</li>
       </ul>
 
