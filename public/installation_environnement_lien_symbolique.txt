@@ -1,7 +1,0 @@
-sudo mkdir /var/www/websites
-
-Attention envdev2023 est le nom de MA machine...
-sudo chown -R envdev2023:envdev2023 /var/www/websites/
-
-Création du lien symbolique
-ln -s /var/www/websites/ .
