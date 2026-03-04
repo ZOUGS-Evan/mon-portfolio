@@ -1,0 +1,27 @@
+    3  sudo apt update && sudo apt upgrade
+    4  sudo apt install curl
+    5  sudo apt install wget
+    6  sudo apt install git
+    7  sudo apt update
+    8  sudo apt -y upgrade
+    9  sudo apt install php
+   10  php -v
+   11  apache2ctl -v
+   12  sudo apt install php8.4-{pdo,mysql,cli,common,imap,ldap,xml,fpm,curl,mbstring,zip}
+   13  sudo apt update
+   14  sudo apt upgrade
+   15  sudo apt show mariadb-server
+   16  sudo apt install mariadb-server -y
+   18  sudo service mariadb start
+   19  sudo mariadb -v
+   20  sudo service apache2 start
+
+Aller sur le site de composer : https://getcomposer.org/installer
+Suivre les instructions.
+
+   26  php composer-setup.php
+   27  php -r "unlink('composer-setup.php');"
+   28  composer
+   30  sudo mv composer.phar /usr/local/bin/composer
+   31  composer
+
