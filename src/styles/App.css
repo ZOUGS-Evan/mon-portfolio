@@ -1,28 +1,59 @@
+/* ===== GLOBAL VARIABLES ===== */
 :root {
-  --bg: #0f1720;
-  --card: #121c2a;
-  --accent: #06b6d4;
-  --text: #e6eef6;
+  --bg: #121212; /* Fond sombre général */
+  --card: #1f1f1f; /* Cartes gris foncé */
+  --accent: #bb86fc; /* Accent violet clair */
+  --text: #e0e0e0; /* Texte gris très clair */
+  --text-muted: #a0a0a0; /* Texte secondaire gris */
+  --button-bg: #3700b3; /* Fond sombre pour les boutons */
+  --button-hover: #6200ea; /* Fond plus clair au hover pour les boutons */
+  --shadow: rgba(0, 0, 0, 0.3); /* Ombre de fond */
 }
 
+/* ===== GLOBAL STYLES ===== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg); /* Fond sombre général */
+  color: var(--text); /* Texte gris clair */
+  line-height: 1.6;
 }
 
-/* ===== NAVBAR UPGRADE ===== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05); /* Effet de zoom pour l'interaction */
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 14px 20px;
-  background: rgba(15, 23, 32, 0.75);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background: rgba(18, 18, 18, 0.85); /* Fond sombre avec transparence */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px var(--shadow);
   z-index: 1000;
 }
 
@@ -34,28 +65,23 @@ body {
   align-items: center;
 }
 
-/* Logo */
 .brand {
   font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  color: var(--accent);
+  font-size: 1.3rem;
+  color: var(--accent); /* Accent violet clair */
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .brand:hover {
   opacity: 0.8;
 }
 
-/* Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
@@ -64,7 +90,7 @@ body {
   color: var(--text);
   font-weight: 500;
   padding: 6px 4px;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -95,7 +121,6 @@ body {
 }
 
 /* ===== MAIN ===== */
-
 main {
   padding-top: 80px;
 }
@@ -106,6 +131,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out; /* Animation d'apparition de la section */
 }
 
 .container {
@@ -113,33 +139,72 @@ main {
   width: 100%;
 }
 
-/* ===== HERO ===== */
-
+/* ===== HERO SECTION ===== */
 .hero {
   text-align: center;
+  padding: 40px;
 }
 
 .hero-title {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideIn 1s ease-in-out; /* Animation pour le titre */
+}
+
+/* Animation pour le titre de la section */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   opacity: 0.9;
   line-height: 1.6;
+  color: var(--text);
 }
 
-.accent {
+/* ===== PROJECTS PAGE ===== */
+.project-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  line-height: 1.7;
+  animation: fadeIn 1s ease-in-out; /* Animation d'apparition de la section */
+}
+
+.project-title {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
   color: var(--accent);
+  letter-spacing: 1px;
 }
 
-/* ===== PROJECTS ===== */
+.project-text {
+  font-size: 1.15rem;
+  text-align: center;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  color: var(--text);
+}
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-items: center;
   margin-top: 30px;
 }
 
@@ -147,54 +212,56 @@ main {
   background: var(--card);
   padding: 16px;
   border-radius: 10px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== CONTACT FORM ===== */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-  max-width: 400px;
+.project-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--accent);
 }
 
-.contact-form input,
-.contact-form textarea {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  padding: 8px;
+.project-card p {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 15px;
   color: var(--text);
 }
 
-button {
+.project-button {
   background: var(--accent);
-  color: #012;
-  border: none;
-  padding: 10px;
+  color: var(--bg);
+  padding: 10px 16px;
   border-radius: 6px;
-  cursor: pointer;
+  text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+  margin-top: auto;
 }
 
-button:hover {
-  background: #09c8e6;
+.project-button:hover {
+  background: #6200ea;
 }
 
 /* ===== CONTACT PAGE ===== */
-
 .contact-container {
   max-width: 800px;
   margin: auto;
   padding: 40px 20px;
-  animation: fadeIn 0.6s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
   line-height: 1.7;
 }
 
@@ -211,11 +278,13 @@ button:hover {
   text-align: center;
   opacity: 0.9;
   margin-bottom: 30px;
+  color: var(--text);
 }
 
 .contact-info p {
   font-size: 1.15rem;
   margin: 8px 0;
+  color: var(--text);
 }
 
 .contact-info a {
@@ -245,13 +314,12 @@ button:hover {
 }
 
 /* ===== ABOUT PAGE ===== */
-
 .about-container {
   max-width: 900px;
   margin: auto;
   padding: 40px 20px;
   line-height: 1.7;
-  animation: fadeIn 0.6s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .about-title {
@@ -266,6 +334,7 @@ button:hover {
   font-size: 1.15rem;
   opacity: 0.95;
   margin-bottom: 18px;
+  color: var(--text);
 }
 
 .subtitle {
@@ -287,30 +356,94 @@ button:hover {
 .skills-list li {
   margin-bottom: 8px;
   font-size: 1.15rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.skills-list li::before {
-  content: "▹";
-  color: var(--accent);
-  font-size: 1.2rem;
-}
-
-.about-goal {
-  margin-top: 10px;
-  padding: 15px 18px;
+/* ===== VEILLE INFORMATIQUE ===== */
+.veille-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
   background: var(--card);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  font-size: 1.15rem;
-  opacity: 0.95;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow);
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* ===== ANIMATION ===== */
+.veille-title {
+  font-size: 2.4rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.veille-description {
+  font-size: 1.15rem;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.veille-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.skills-table th, .skills-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.skills-table th {
+  background-color: var(--bg);
+  color: var(--accent);
+}
+
+.skills-table td {
+  color: var(--text);
+}
+
+.download-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.download-text {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #09c8e6;
+}
+
+/* ===== FADE-IN ANIMATION ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
