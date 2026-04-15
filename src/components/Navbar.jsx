@@ -18,6 +18,7 @@ export default function Navbar() {
           <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home') }}>Accueil</a></li>
           <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about') }}>À propos</a></li>
           <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}>Projets</a></li>
+	  <li><a href="/veille" onClick={(e) => { e.preventDefault(); scrollToSection('veille') }}>Veille Informatique</a></li>
           <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}>Contact</a></li>
         </ul>
       </div>
